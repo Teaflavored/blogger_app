@@ -1,4 +1,6 @@
-<h1><%= @article.title %></h1>
+<h1><%= @article.title %>
+		<%= link_to "edit article", edit_article_path(@article), class: "edit_button"%>
+</h1>
 <p><%= @article.body %></p>
-<p><%= button_to 'delete', article_path(@article), method: :delete %></p>
+<p><%= button_to 'delete', article_path(@article), method: :delete, data: { confirm: "Really destroy?"}%></p>
 <%= link_to "Back to articles list", articles_path %>
